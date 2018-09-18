@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'dashboard#index'
   
 
+  
   resources :section_materials
   resources :materials
   resources :grades
