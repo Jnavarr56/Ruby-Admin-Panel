@@ -1,10 +1,7 @@
 Rails.application.routes.draw do
   root 'dashboard#index'
 
-  get '/dashboard', to: 'dashboard#index'
-
-  
-
+  get '/dashboard', to: 'dashboard#indexgit'
 
   resources :section_materials
   resources :materials
