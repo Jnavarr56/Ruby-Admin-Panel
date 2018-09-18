@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   
 
   
+
   resources :section_materials
   resources :materials
   resources :grades
