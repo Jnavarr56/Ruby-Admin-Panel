@@ -1,0 +1,28 @@
+<h1 id = "newTitle">New User</h1>
+
+<%= render 'form', user: @user %>
+
+<%= link_to 'Back', users_path %>
+
+<script>
+    document.getElementById("user_access").addEventListener("change", ()=>{
+        if (document.getElementById("user_access").value === "student") {
+
+            document.getElementById("user_years_experience").disabled = true;
+            document.getElementById("user_years_experience").value = "";
+            document.getElementById("user_years_experience").parentElement.style.display = "none";
+
+            document.getElementById("user_salary").disabled = true;
+            document.getElementById("user_salary").value = "";
+            document.getElementById("user_salary").parentElement.style.display = "none";
+        }
+        else {
+            document.getElementById("user_years_experience").disabled = false;
+            document.getElementById("user_salary").disabled = false;
+
+            document.getElementById("user_salary").parentElement.style.display = "initial";
+            document.getElementById("user_years_experience").parentElement.style.display = "initial";
+        }
+
+    });
+</script>

@@ -1,0 +1,60 @@
+<p id="notice"><%= notice %></p>
+<table id = "enrollmentsTable">
+  <thead>
+    <tr>
+      <th class = "sort" data-sort = "course-shortname"><h3>Course</h3></th>
+      <th class = "sort" data-sort = "section-type"><h3>Section Type</h3></th>
+      <th class = "sort" data-sort = "section-View"><h3>Section</h3></th>
+      <th class = "sort" data-sort = "individual-name"><h3>Individual</h3></th>
+      <th class = "sort" data-sort = "enrollment-type"><h3>Enrolled As</h3></th>
+      <th colspan="3"><h3>Actions</h3></th>
+    </tr>
+  </thead>
+  <tbody class = "list">
+    <% @enrollments.each do |enrollment| %>
+      <% registered_party_name = @users_by_enrollment[enrollment.user_id][:last_name] + ", " + @users_by_enrollment[enrollment.user_id][:first_name] %>
+
+      
+      <% if @sections_by_enrollment[enrollment.section_id][:meeting_scheme] === "MWF" %>
+        <% section_type = "Day" %>
+      <% else %>
+        <% section_type = "Evening" %>
+      <% end %>
+      <tr>
+        <td class = "course-shortname"><h4><%= @courses_by_enrollment[@sections_by_enrollment[enrollment.section_id][:course_id]][:course_short_name] %></h4></td>
+        <td class = "section-type" align = "center" ><h4><%= section_type %></h4></td>
+        <td class = "cellLink"><h4><%= link_to "View Section Info", @sections_by_enrollment[enrollment.section_id] %></h4></td>
+        <td class = "individual-name cellLink"><h4><%= link_to registered_party_name, @users_by_enrollment[enrollment.user_id] %></h4></td>
+        <td class = "enrollment-type"><h4><%= @users_by_enrollment[enrollment.user_id][:access] %></h4></td>
+        <td><%= link_to image_tag("showIcon.png",  class: "icon"), enrollment %></td>
+        <td><%= link_to image_tag("editIcon.png",  class: "icon"), edit_enrollment_path(enrollment) %></td>
+        <td><%= link_to image_tag("deleteIcon.png",  class: "icon"), enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div id = "enrollmentsTableSettings">
+  <h2>Search:</h2>
+  <input id = "enrollmentSearch" class="search"/>
+  <h2>Filter By:</h2>
+  <select id = "filterBy" class = "course-shortname-filter">
+    <option value="all">All</option>
+    <option value="FPP 100">Fundamentals of Pastry Preparation 100</option>
+    <option value="CDM 100">Cake Decoration Methods 100</option>
+    <option value="DW 200">Desserts of the World 200</option>
+    <option value="BBM 100">Basic Bakery Management 100</option>
+    <option value="HLE 400">Higher Level Expression 400</option>
+    <option value="MP 300">Menu Pairing 300</option>
+    <option value="CT 200">Chocolate Techniques 200</option>
+    <option value="DS 200">Dessert Safety 200</option>
+    <option value="MBEP 400">Master Baker Exam Prep 400</option>
+  </select>
+  <h2 id = "resultsCount"></h2>
+  <div>
+    <%= link_to 'Create New Enrollment', new_enrollment_path %>
+  </div>
+</div>
+
+<br>
+
+

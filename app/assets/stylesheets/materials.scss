@@ -1,0 +1,126 @@
+// Place all the styles related to the materials controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+#suppliesTable {
+    table-layout: fixed;
+
+    width: 700px;
+
+    margin: 0 auto;
+
+    border-style: solid;
+    border-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    position: absolute;
+    right: 0px;
+    h4, h3 {
+        font-size: 15px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a {   
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    .cellLink:hover {
+        background-color: blue;
+    }
+    tr {
+        background-color: rgba(black, .5);
+    }
+    thead:first-child {
+        width: 30px;
+    }
+    tbody {
+        tr:nth-child(even) {
+            background-color: rgba(white, .2);
+        }
+        tr:nth-child(odd) {
+            background-color: rgba(black, .2);
+        }
+    }
+}
+#suppliesTableSettings {
+    border-style: solid;
+    border-color: white;
+    border-radius: 15px;
+
+
+    position: fixed;
+    top: 200px;
+    left: 390px;
+    
+    
+    height: 200px;
+    width: 250px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-family: 'Montserrat';
+    }
+    input {
+        outline: none;
+        
+        border-radius: 15px;
+        border-style: none;
+
+        text-indent: 15px;
+    }
+    div {
+        position: absolute;
+        bottom: -70%;
+
+        height: 80px;
+        width: 200px;
+
+        border-style: solid;
+        border-color: white;
+        border-radius: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            color: white;
+            font-family: 'Montserrat', sans-serif; 
+
+            font-size: 15px;
+        }
+    }
+    div:hover {
+        background-color: blue;
+    }
+}
+#itemShow {
+    color: white;
+    
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 60%;
+    width: 60%;
+
+    h1, h4, h2, p {
+        font-family: 'Montserrat';
+    }
+
+    background-color: rgba(black, .3);
+
+    border-radius: 15px;
+    border-style: solid;
+    border-color: white;
+
+    padding: 10px;
+}

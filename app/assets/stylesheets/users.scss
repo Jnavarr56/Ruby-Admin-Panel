@@ -1,0 +1,112 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+#directoryTableSettings {
+    position: fixed;
+    top: 200px;
+    left: 400px;
+
+    height: 200px;
+    width: 200px;
+
+    border-style: solid;
+    border-color: white;
+    border-radius: 15px;
+
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    input {
+        outline: none;
+        
+        border-radius: 15px;
+        border-style: none;
+        border-style: solid;
+        border-color: white;
+
+        height: 8%;
+        width: 60%;
+
+        text-indent: 15px;
+        font-family: 'Montserrat', sans-serif; 
+    }
+    select {
+        option {
+            font-family: 'Montserrat', sans-serif; 
+        }
+    }
+    div {
+        position: absolute;
+        bottom: -80%;
+
+        height: 80px;
+        width: 200px;
+
+        border-style: solid;
+        border-color: white;
+        border-radius: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            color: white;
+            font-family: 'Montserrat', sans-serif; 
+
+            font-size: 15px;
+        }
+    }
+    div:hover {
+        background-color: blue;
+    }
+}
+#directoryTable {
+    width: 634px;
+
+    margin: 0 auto;
+    
+    position: absolute;
+    right: 75px;
+
+    border-style: solid;
+    border-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+    h4, h3 {
+        font-size: 15px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a {
+        text-decoration: none;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a:hover {
+        background-color: rgba(0,0,0,0);
+    }
+    tr {
+        background-color: rgba(black, .5);
+    }
+    tbody {
+        tr:nth-child(even) {
+            background-color: rgba(white, .2);
+        }
+        tr:nth-child(odd) {
+            background-color: rgba(black, .2);
+        }
+    }
+}
+
+

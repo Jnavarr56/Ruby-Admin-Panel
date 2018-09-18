@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+<h1 id = "showTitle">Course Details</h1>
+<div id = "showSection">
+<p>
+  <strong>Course Title:</strong>
+  <%= @course.course_title %>
+</p>
+
+<p>
+  <strong>Course Number:</strong>
+  <%= @course.course_description %>
+</p>
+
+<p>
+  <strong>Course Instructor:</strong>
+  <%= @course_instructor[:last_name] %>, <%= @course_instructor[:first_name] %>
+</p>
+
+
+<% @course_sections.each do |section| %>
+  <% if section.meeting_scheme === "MWF" %>
+    <p class = "sectionRosterHeader"><strong>MORNING Section [<%= @section_roster[:morning].length %> Total]: </strong></p>
+    <div class = "roster">  
+      <% @section_roster[:morning].each do |student| %>
+          <p><%= student %></p>
+      <% end %>
+    </div>
+  <% else %>
+    <p class = "sectionRosterHeader"><strong>EVENING SECTION: [<%= @section_roster[:evening].length %> Total]:</strong></p>
+    <div class = "roster">
+      <% @section_roster[:evening].each do |student| %>
+        <p><%= student %></p>
+      <% end %>
+    </div>
+  <% end %>
+<% end %>
+</div>
+
+
+<%= link_to 'Edit Course Details', edit_course_path(@course) %> |
+<%= link_to 'Back', courses_path %>

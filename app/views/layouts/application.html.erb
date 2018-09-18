@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Pastry Academy</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= favicon_link_tag asset_path('favicon.png'), :rel => 'icon', :type =>  'image/png' %>  
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/list.js/1.5.0/list.min.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  
+
+  <body id = "main">
+    <nav id = "topNav">
+      <h1 id = "newsfeed">Loading Education News Feed...</h1>
+      <h1 id = "logOut" class = "navItem"><%# log out %></h1>
+    </nav>
+    <nav id = "sideNav">
+      <div id = "titleBox">
+        <h1 class = "navItem">Pastry Academy</h1>
+      </div>
+      <h2 id = "time"><%= Time.current.in_time_zone('Eastern Time (US & Canada)').strftime("%b %a %D %l:%M %p") %></h2>
+      <div id = "sideMenu">
+        <div class = "sideMenuItem">
+          <a href = "/users"><h1>Directory</h1></a>
+        </div>
+        <div class = "sideMenuItem">
+          <a href = "/courses"><h1>Courses</h1></a>
+        </div>
+        <div class = "sideMenuItem">
+          <a href = "/sections"><h1>Sections</h1></a>
+        </div>
+        <div class = "sideMenuItem">
+          <a href = "/enrollments"><h1>Enrollments</h1></a>
+        </div>
+        <div class = "sideMenuItem">
+          <a href = "/materials"><h1>Bookstore</h1></a>
+        </div>
+        
+        <%# <div class = "sideMenuItem"> %>
+        <%# <a href = "/assignments"><h1>Assignments</h1></a> %>
+        <%# </div> %>
+        
+        <%# <div class = "sideMenuItem"> %>
+        <%# <a href = "/grades"><h1>Grades</h1></a> %>
+        <%# </div> %>
+        <div class = "sideMenuItem">
+          <a href = "/dashboard"><h1>Admin Dashboard</h1></a>
+      </div>
+      </div>
+    </nav>
+
+    <section id = "display">
+      <%= yield %>
+    </section>
+
+    
+  </body>
+</html>

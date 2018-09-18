@@ -1,0 +1,13 @@
+<p id="notice"><%= notice %></p>
+
+<div id = "itemShow"> 
+  <h1>
+    <%= @material.material_title %>
+  </h1>
+  <h4>
+  <%= @material.material_description %></h4>
+  <h3>$<%= @material.material_price.to_f %></h3>
+</div>
+
+<%= link_to 'Edit', edit_material_path(@material) %> |
+<%= link_to 'Back', materials_path %>

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  start_date: 2018-08-24
+  end_date: 2018-08-24
+  meeting_scheme: MyString
+  meeting_time: 2018-08-24 14:04:40
+  section_hours: 1.5
+  course_id: 1
+
+two:
+  start_date: 2018-08-24
+  end_date: 2018-08-24
+  meeting_scheme: MyString
+  meeting_time: 2018-08-24 14:04:40
+  section_hours: 1.5
+  course_id: 1

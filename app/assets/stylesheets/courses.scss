@@ -1,0 +1,115 @@
+// Place all the styles related to the courses controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+
+
+#coursesTableSettings {
+    border-style: solid;
+    border-color: white;
+    border-radius: 15px;
+
+
+    position: absolute;
+    top: 100px;
+    left: 80px;
+    
+    
+    height: 200px;
+    width: 200px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    h2 {
+        color: white;
+        font-family: 'Montserrat';
+    }
+    input {
+        outline: none;
+        
+        border-radius: 15px;
+        border-style: none;
+
+        text-indent: 15px;
+    }
+    div {
+        position: absolute;
+        bottom: -70%;
+
+        height: 80px;
+        width: 200px;
+
+        border-style: solid;
+        border-color: white;
+        border-radius: 15px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        a {
+            color: white;
+            font-family: 'Montserrat', sans-serif; 
+
+            font-size: 15px;
+        }
+    }
+    div:hover {
+        background-color: blue;
+    }
+}
+
+#courseTable {
+    margin: 0 auto;
+
+    border-style: solid;
+    border-color: white;
+
+    border-radius: 15px;
+
+    overflow: hidden;
+
+    position: absolute;
+    right: 0px;
+    h4, h3 {
+        font-size: 15px;
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    a {
+        color: white;
+        font-family: 'Montserrat', sans-serif;
+    }
+    tr {
+        background-color: rgba(black, .5);
+    }
+    tbody {
+        tr:nth-child(even) {
+            background-color: rgba(white, .2);
+        }
+        tr:nth-child(odd) {
+            background-color: rgba(black, .2);
+        }
+    }
+}
+.roster {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    p {
+        margin: 2px;
+    }
+
+    p:nth-child(even) {
+        background-color: green;
+    }
+    p:nth-child(odd) {
+        background-color: blue;
+    }
+}
+.sectionRosterHeader {
+    text-decoration: underline;
+}

@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+<table id = "courseTable">
+  <thead>
+    <tr>
+      <th class = "sort" data-sort = "course-title"><h3>Course Title</h3></th>
+      <th class = "sort" data-sort = "course-description"><h3>Level</h3></th>
+      <th class = "sort" data-sort = "course-sections"><h3>Sections</h3></th>
+      <th class = "sort" data-sort = "course-students"><h3>Total Students</h3></th>
+      <th class = "sort" data-sort = "course-instructor"><h3>Instructor</h3></th>
+      <th colspan="3"><h3>Actions</h3></th>
+    </tr>
+  </thead>
+  <tbody class = "list">
+    <% @courses.each do |course| %>
+      <% if @course_instructor[course.id] != nil %>
+        <% instructor = @course_instructor[course.id][:last_name] + ", " + @course_instructor[course.id][:first_name] %>
+        <% instructor_link = @course_instructor[course.id][:self_link] %>
+      <% else %>
+        <% instructor = "N/A" %>
+        <% instructor_link = "" %>
+      <% end %>
+      <tr>
+        <td class = "course-title"><h4><%= course.course_title %></h4></td>
+        <td class = "course-description"><h4><%= course.course_description %></h4></td>
+        <td align = "center" class = "course-sections"><h4><%= @courses_num_sections[course.id] %></h4></td>
+        <td align = "center" class = "course-students"><h4><%= @courses_num_students[course.id] %></h4></td>
+        <td class = "course-instructor cellLink"><h4><%= link_to instructor, instructor_link %></h4></td>
+        <td><%= link_to image_tag("showIcon.png",  class: "icon"), course %></td>
+        <td><%= link_to image_tag("editIcon.png",  class: "icon"), edit_course_path(course) %></td>
+        <td><%= link_to image_tag("deleteIcon.png",  class: "icon"), course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<div id = "coursesTableSettings">
+  <h2>Search:</h2>
+  <input id = "courseSearch" class="search"/>
+  <h2>Filter By:</h2>
+  <select id = "filterBy" class = "course-description-filter">
+    <option value="all">All</option>
+    <option value=100>100</option>
+    <option value=200>200</option>
+    <option value=300>300</option>
+    <option value=400>400</option>
+  </select>
+  <h2 id = "resultsCount"></h2>
+  <div>
+    <%= link_to 'Create New Course', new_course_path %>
+  </div>
+</div>
+
+<br>
+
+

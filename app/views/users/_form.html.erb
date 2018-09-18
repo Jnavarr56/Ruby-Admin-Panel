@@ -1,0 +1,72 @@
+<%= form_with(model: user, local: true) do |form| %>
+  <% if user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% user.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <h4>First Name:</h4>
+    <%= form.text_field :first_name %>
+  </div>
+
+  <div class="field">
+    <h4>Last Name:</h4>
+    <%= form.text_field :last_name %>
+  </div>
+
+  <div class="field">
+    <h4>Email:</h4>
+    <%= form.text_field :email %>
+  </div>
+
+  <div class="field">
+    <h4>Age:</h4>
+    <%= form.number_field :age %>
+  </div>
+
+  <div class="field">
+    <h4>Date of Birth:</h4>
+    <%= form.date_select :date_of_birth %>
+  </div>
+
+  <div class="field">
+    <h4>Social Security Number:</h4>
+    <%= form.text_field :social_security_number %>
+  </div>
+
+  <div class="field">
+    <h4>Ethnicity:</h4>
+    <%= form.text_field :ethnicity %>
+  </div>
+
+  <div class="field">
+    <h4>Salary:</h4>
+    <%= form.text_field :salary %>
+  </div>
+
+  <div class="field">
+    <h4>Years of Experience:</h4>
+    <%= form.number_field :years_experience %>
+  </div>
+
+  <div class="field">
+    <h4>Access:</h4>
+    <%= form.select :access, ["instructor", "student"] %>
+  </div>
+
+  <div class="field">
+    <h4>Password:</h4>
+    <%= form.text_field :password %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

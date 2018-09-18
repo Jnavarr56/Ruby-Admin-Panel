@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+<div id = "directoryTableSettings">
+  <h2>Search:</h2>
+  <input id = "directorySearch" class="search"/>
+  <h2>Filter By:</h2>
+  <select id = "filterBy" class = "access-filter">
+    <option value="all">All</option>
+    <option value="student">Students</option>
+    <option value="instructor">Instructors</option>
+  </select>
+  <h2 id = "resultsCount"></h2>
+  <div>
+    <%= link_to 'Create New Account', new_user_path %>
+  </div>
+</div>
+
+<table id = "directoryTable">
+  <thead>
+    <tr>
+      <th class = "sort" data-sort = "first-name"><h3>First Name</h3></th>
+      <th class = "sort"data-sort = "last-name"><h3>Last Name</h3></th>
+      <th class = "sort"data-sort = "email"><h3>Email</h3></th>
+      <th class = "sort" data-sort = "access"><h3>Access</h3></th>
+      <th class = "sort"colspan = "3"><h3>Actions</h3></th>
+    </tr>
+  </thead>
+  <tbody class = "list">
+    <% @users.each do |user| %>
+      <tr>
+        <td class = "first-name"><h4><%= user.first_name %></h4></td>
+        <td class = "last-name"><h4><%= user.last_name %></h4></td>
+        <td class = "email"><h4><%= user.email %></h4></td>
+        <td class = "access"><h4><%= user.access %></h4></td>
+        <td class = "spLink"><%= link_to image_tag("showIcon.png",  class: "icon"), user %></td>
+        <td class = "spLink"><%= link_to image_tag("editIcon.png",  class: "icon"), edit_user_path(user) %></td>
+        <td ><%= link_to image_tag("removeIcon.png",  class: "icon"), user, method: :delete, data: { confirm: 'Are you sure?' } %></td> 
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<br>
+
+

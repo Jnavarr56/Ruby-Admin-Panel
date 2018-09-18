@@ -1,0 +1,62 @@
+<p id="notice"><%= notice %></p>
+<h1 id = "showTitle">Account Info</h1>
+<div id = "showSection">
+  <p>
+    <strong>First Name:</strong>
+    <%= @user.first_name %>
+  </p>
+
+  <p>
+    <strong>Last Name:</strong>
+    <%= @user.last_name %>
+  </p>
+
+  <p>
+    <strong>Email:</strong>
+    <%= @user.email %>
+  </p>
+
+  <p>
+    <strong>Age:</strong>
+    <%= @user.age %>
+  </p>
+
+  <p>
+    <strong>Date of Birth:</strong>
+    <%= @user.date_of_birth %>
+  </p>
+
+  <p>
+    <strong>Social Security Number:</strong>
+    <%= @user.social_security_number %>
+  </p>
+
+  <p>
+    <strong>Ethnicity:</strong>
+    <%= @user.ethnicity %>
+  </p>
+
+  <% if @user.access == "instructor" %>
+    <p>
+      <strong>Salary:</strong>
+      <%= "$#{'%.02f' % @user.salary}"%>
+    </p>
+  
+    <p>
+      <strong>Years Experience:</strong>
+      <%= @user.years_experience %>
+    </p>
+  <% end %>
+
+  <p>
+    <strong>Access:</strong>
+    <%= @user.access %>
+  </p>
+
+  <p>
+    <strong>Password:</strong>
+    <%= @user.password %>
+  </p>
+</div>
+<%= link_to 'Edit This User', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>

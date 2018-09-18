@@ -1,0 +1,33 @@
+<p id="notice"><%= notice %></p>
+<table id = "suppliesTable">
+  <thead>
+    <tr>
+      <th class = "sort" data-sort = "price"><h3>Price</h3></th>
+      <th class = "sort" data-sort = "item"><h3>Item</h3></th>
+      <th colspan="3"><h3>Actions</h3></th>
+    </tr>
+  </thead>
+  <tbody class = "list"> 
+    <% @materials.each do |material| %>
+      <tr>
+        <td class = "price" align = "center"><h4><%= "$#{'%.02f' % material.material_price}" %></h4></td>
+        <td class = "item"><h4><%= material.material_title %></h4></td>
+        <td align = "center"><%= link_to image_tag("showIcon.png",  class: "icon"), material %></td>
+        <td align = "center"><%= link_to image_tag("editIcon.png",  class: "icon"), edit_material_path(material) %></td>
+        <td align = "center"><%= link_to image_tag("deleteIcon.png",  class: "icon"), material, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<div id = "suppliesTableSettings">
+  <h2>Search:</h2>
+  <input id = "suppliesSearch" class="search"/>
+  <h2 id = "resultsCount"></h2>
+  <div>
+    <%= link_to 'Add New Item', new_material_path %>
+  </div>
+</div>
+<br>
+
+

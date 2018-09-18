@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  material_price: 1.5
+  material_title: MyString
+  material_description: MyString
+
+two:
+  material_price: 1.5
+  material_title: MyString
+  material_description: MyString
